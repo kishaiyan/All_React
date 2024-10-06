@@ -1,0 +1,30 @@
+.card{
+  display: flex;
+  flex-direction: column;
+  padding:10px 10px;
+  font-size: 0.75rem;
+  width: 300px;
+  position: relative;
+}
+.gray{
+  color:#918E9B;
+}
+.card>h2{
+  font-size: 12px;
+ 
+  font-weight: normal;
+}
+.bold{
+  font-weight: bold;
+}
+.card-row{
+  align-items: center;
+}
+.card-badge{
+  position:absolute;
+  top:6px;
+  left:6px;
+  background-color: gray;
+  color:black;
+  border:1px solid black;
+}

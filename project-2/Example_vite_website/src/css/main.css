@@ -1,0 +1,29 @@
+section{
+  padding-left: 20px;
+  font-family: 'poppins',sans-serif;
+}
+
+.hero{
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.photo-grid{
+  width:70%;
+  align-self: center;
+  padding-top: 30px;
+}
+.hero--heading{
+  font-size : 36px;
+  margin-top:30px;
+  letter-spacing: 3px;
+}
+.hero--text{
+  font-size: 1.5rem;
+  margin-top:16px;
+  max-width: 50%;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
