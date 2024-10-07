@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState,useCallback } from "react";
 
 export default function App() {
   const [text, setText] = useState("");
@@ -16,20 +16,20 @@ export default function App() {
     passwordRef.current.select();
   }
 
-  const generatePassword = () => {
-    let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    if (numberPresent) characters += "0123456789"; // Include numbers if checkbox is checked
-    if (symbolPresent) characters += "!@#$%^&*()"; // Include symbols if checkbox is checked
-
-    let password = "";
-    for (let i = 0; i < length; i++) {
-      const random=Math.floor(Math.random()*characters.length);
-      console.log(random);
-      const randomIndex = Math.floor(Math.random() * characters.length);
-      password += characters[randomIndex];
-    }
-    setText(password); // Set the generated password
-  };
+  const generatePassword = useCallback(()=>{
+    
+      let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      if (numberPresent) characters += "0123456789"; // Include numbers if checkbox is checked
+      if (symbolPresent) characters += "!@#$%^&*()"; // Include symbols if checkbox is checked
+  
+      let password = "";
+      for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        password += characters[randomIndex];
+      }
+      setText(password); // Set the generated password
+    
+  },[length,numberPresent,symbolPresent]) 
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-800 text-white">
